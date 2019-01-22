@@ -1,78 +1,8 @@
-<!--
-    Winhweel.js one image per segment wheel example by Douglas McKechie @ www.dougtesting.net
-    See website for tutorials and other documentation.
-
-    The MIT License (MIT)
-
-    Copyright (c) 2016 Douglas McKechie
-
-    Permission is hereby granted, free of charge, to any person obtaining a copy
-    of this software and associated documentation files (the "Software"), to deal
-    in the Software without restriction, including without limitation the rights
-    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-    copies of the Software, and to permit persons to whom the Software is
-    furnished to do so, subject to the following conditions:
-
-    The above copyright notice and this permission notice shall be included in all
-    copies or substantial portions of the Software.
-
-    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-    SOFTWARE.
--->
-<html>
-    <head>
-        <title>HTML5 Canvas Winning Wheel</title>
-        <link rel="stylesheet" href="./css/main.css" type="text/css">
-        <script type="text/javascript" src="./js/Winwheel.js"></script>
-        <script src="./js/TweenMax.min.js"></script>
-    </head>
-    <body>
-        <div align="center">
-            <table cellpadding="0" cellspacing="0" border="0">
-                <tr>
-                    <td>
-                        <div class="power_controls">
-                            <br />
-                            <br />
-                            <table class="power" cellpadding="10" cellspacing="0">
-                                <tr>
-                                    <th align="center">Power</th>
-                                </tr>
-                                <tr>
-                                    <td width="78" align="center" id="pw3" onClick="powerSelected(3);">High</td>
-                                </tr>
-                                <tr>
-                                    <td align="center" id="pw2" onClick="powerSelected(2);">Med</td>
-                                </tr>
-                                <tr>
-                                    <td align="center" id="pw1" onClick="powerSelected(1);">Low</td>
-                                </tr>
-                            </table>
-                            <br />
-                            <img id="spin_button" src="./media/spin_off.png" alt="Spin" onClick="startSpin();" />
-                            <br /><br />
-                            &nbsp;&nbsp;<a href="#" onClick="resetWheel(); return false;">Play Again</a><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(reset)
-                        </div>
-                    </td>
-                    <td width="421" height="564" class="the_wheel" align="center" valign="center">
-                        <canvas id="canvas" width="420" height="420">
-                            <p style="{color: white}" align="center">Sorry, your browser doesn't support canvas. Please try another.</p>
-                        </canvas>
-                    </td>
-                </tr>
-            </table>
-        </div>
-        <script>
-            // Create new wheel object specifying the parameters at creation time.
+ // Create new wheel object specifying the parameters at creation time.
             let theWheel = new Winwheel({
-                'numSegments'       : 8,                 // Specify number of segments.
+                'numSegments'       : 5,                 // Specify number of segments.
                 'outerRadius'       : 200,               // Set outer radius so wheel fits inside the background.
-                'drawText'          : true,              // Code drawn text can be used with segment images.
+                'drawText'          : false,              // Code drawn text can be used with segment images.
                 'textFontSize'      : 16,
                 'textOrientation'   : 'curved',
                 'textAlignment'     : 'inner',
@@ -81,23 +11,22 @@
                 'textStrokeStyle'   : 'black',
                 'textLineWidth'     : 3,
                 'textFillStyle'     : 'white',
+                'responsive'        : true,
                 'drawMode'          : 'segmentImage',    // Must be segmentImage to draw wheel using one image per segemnt.
                 'segments'          :                    // Define segments including image and text.
                 [
-                   {'image' : './media/jane.png',  'text' : 'Jane'},
-                   {'image' : './media/tom.png',   'text' : 'Tom'},
-                   {'image' : './media/mary.png',  'text' : 'Mary'},
-                   {'image' : './media/alex.png',  'text' : 'Alex'},
-                   {'image' : './media/sarah.png', 'text' : 'Sarah'},
-                   {'image' : './media/bruce.png', 'text' : 'Bruce'},
-                   {'image' : './media/rose.png',  'text' : 'Rose'},
-                   {'image' : './media/steve.png', 'text' : 'Steve'}
+                   {'image' : '../media/one1.png',  'text' : 'One'},
+                   {'image' : '../media/two1.png',   'text' : 'Two'},
+                   {'image' : '../media/three1.png',  'text' : 'Three'},
+                   {'image' : '../media/four1.png',  'text' : 'Four'},
+                   {'image' : '../media/five1.png', 'text' : 'Five'}
+
                 ],
                 'animation' :           // Specify the animation to use.
                 {
                     'type'     : 'spinToStop',
-                    'duration' : 5,     // Duration in seconds.
-                    'spins'    : 8,     // Number of complete spins.
+                    'duration' : 10,     // Duration in seconds.
+                    'spins'    : 15,     // Number of complete spins.
                     'callbackFinished' : alertPrize
                 }
             });
@@ -195,6 +124,3 @@
                 // Do basic alert of the segment text. You would probably want to do something more interesting with this information.
                 alert(indicatedSegment.text + ' says Hi');
             }
-        </script>
-    </body>
-</html>

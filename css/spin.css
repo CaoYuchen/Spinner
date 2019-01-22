@@ -15,14 +15,60 @@ body
     font-family: arial;
 }
 
+button {
+    outline: none;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+}
+
 /* Sets the background image for the wheel */
-td.the_wheel
+.the_wheel
 {
     background-image: url(../media/wheel_back.png);
     background-position: center;
     background-repeat: no-repeat;
 }
 
+.plate{
+    background-color: #e2e3ddfa;
+    border-radius: 60px;
+    display: inline-block;
+    margin-left: 50px;
+}
+
+.plate span{
+    font-size: 60px;
+    margin:0 15px 20px 15px;
+    font-weight:50;
+    color:#c8c5c5;
+}
+
+.plate button{
+    background-color: #acacac;
+    border-radius: 50%;
+    margin:10px 10px 0 0;
+    float:right;
+
+}
+
+.plate img{
+    margin:10px 5px;
+}
+
+.plate input{
+    width:600px;
+    outline: none;
+    border: 9px solid #ffd35c;
+    border-radius: 50px;
+    overflow: hidden;
+    text-align: center;
+    font-weight: bold;
+    font-size: 60px;
+    margin:10px 0 15px 15px;
+
+}
 /* Do some css reset on selected elements */
 h1, p
 {
@@ -78,4 +124,18 @@ td.pw3
 .margin_bottom
 {
     margin-bottom: 5px;
+}
+
+
+.ripple {
+  background-position: center;
+  transition: background 0.8s;
+}
+.ripple:hover {
+  background: #47a7f5 radial-gradient(circle, transparent 1%, #47a7f5 1%) center/15000%;
+}
+.ripple:active {
+  background-color: #6eb9f7;
+  background-size: 100%;
+  transition: background 0.2s;
 }
