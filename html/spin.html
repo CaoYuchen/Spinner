@@ -36,24 +36,17 @@
 
 <body>
     <div align="center">
-        <table cellpadding="0" cellspacing="0" border="0">
-            <tr>
-                <td width="421px" height="564px" class="the_wheel" align="center" valign="center">
-                    <canvas id="canvas" width="400" height="400">
-                        <p style="{color: white}" align="center">Sorry, your browser doesn't support canvas. Please try another.</p>
-                    </canvas>
-                </td>
-            </tr>
-            <tr>
-                <td align="center" valign="center">
-                    <br><br>
-                    <div class="plate">
-                        <input id="name" type="text" value="" maxlength="10" readonly="readonly"> <span>|</span>
-                        <button class="ripple"><img id="spin_button" class="clickable" src="../media/star.png" width="70px" alt="Spin" onClick="startSpin()"></button>
-                    </div>
-                </td>
-            </tr>
-        </table>
+        <div width="564px" height="564px" class="the_wheel" align="center" valign="center">
+            <canvas id="canvas" width="400" height="400">
+                <p style="{color: white}" align="center">Sorry, your browser doesn't support canvas. Please try another.</p>
+            </canvas>
+        </div>
+        <div align="center">
+            <div class="plate">
+                <input id="name" type="text" value="" maxlength="10" readonly="readonly"> <span>|</span>
+                <button class="ripple"><img id="spin_button" class="clickable" src="../media/star.png" width="70px" alt="Spin" onClick="startSpin()"></button>
+            </div>
+        </div>
     </div>
     <script>
     // Create new wheel object specifying the parameters at creation time.
@@ -147,7 +140,7 @@
     }
     </script>
 
-    <script>
+<!--     <script>
     $(function(){
         document.oncontextmenu = function(){
             return false;
@@ -170,7 +163,7 @@
             }
         }
     })
-    </script>
+    </script> -->
 </body>
 
 </html>
