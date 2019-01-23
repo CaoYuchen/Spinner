@@ -1,11 +1,11 @@
 
 $(function(){
-    $("#overlay-menu").click(function() {
-    $(".overlay").addClass('overlay-open');
+    $("#Spin-overlay-menu").click(function() {
+    $(".Spin-overlay").addClass('Spin-overlay-open');
     });
 
-    $(".overlay-close").click(function() {
-        $(".overlay").removeClass('overlay-open');
+    $(".Spin-overlay-close").click(function() {
+        $(".Spin-overlay").removeClass('Spin-overlay-open');
     });
 })
 
@@ -19,16 +19,5 @@ $(function(){
     }
     document.onselectstart = function(){
         return false;
-    }
-    document.onkeydown = function() {
-        if (event.ctrlKey) {
-            return false;
-        }
-        if (event.altKey) {
-            return false;
-        }
-        if (event.shiftKey) {
-            return false;
-        }
     }
 })
