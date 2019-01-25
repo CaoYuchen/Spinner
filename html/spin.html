@@ -85,7 +85,9 @@
     // Vars used by the code in this page to do power controls.
     let wheelPower = 3;
     let wheelSpinning = false;
-
+    //alarm when spinning
+    var alarm = new Audio("../media/alarm.mp3");
+    alarm.loop = true;
     // -------------------------------------------------------
     // Click handler for spin button.
     // -------------------------------------------------------
@@ -101,6 +103,8 @@
             } else if (wheelPower == 3) {
                 theWheel.animation.spins = 15;
             }
+
+            alarm.play();
 
             // Disable the spin button so can't click again while wheel is spinning.
             // document.getElementById('spin_button').src = "./media/spin_off.png";
@@ -137,6 +141,8 @@
         document.getElementById('name').value = indicatedSegment.text;
         // document.getElementById('spin_button').src = "./media/spin_on.png";
         // document.getElementById('spin_button').className = "clickable";
+        alarm.pause();
+        alarm.currentTime = 0;
         resetWheel();
     }
     </script>
